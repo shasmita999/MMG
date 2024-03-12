@@ -1,0 +1,31 @@
+name: MMG_Proj
+version: 2
+projectReferences: 
+resources: 
+  - name: .classpath
+    type: com.ibm.rational.test.lt.classpath
+    dependencies: 
+      - path: /MMG_Proj/src
+        type: javaClasspath
+  - name: _google_com_4bc.ma
+    type: moeb.applicationPackage
+  - name: src
+    resources: 
+  - name: test.recdata
+  - name: test.recsession
+    type: com.ibm.rational.test.lt.recsession
+    dependencies: 
+      - path: /MMG_Proj/test.recdata
+        type: recsessionRecdata
+  - name: test.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 10.5.3.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.mobileweb'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1EEE03A91FBFE40CAE4B63036353838
+    dependencies: 
+      - path: /MMG_Proj/_google_com_4bc.ma
+        type: test#moeb.applicationPackage
+      - path: /MMG_Proj/test.recsession
+        type: testRecsession
