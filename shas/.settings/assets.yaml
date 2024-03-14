@@ -1,0 +1,31 @@
+name: shas
+version: 2
+projectReferences: 
+resources: 
+  - name: .classpath
+    type: com.ibm.rational.test.lt.classpath
+    dependencies: 
+      - path: /shas/src
+        type: javaClasspath
+  - name: edge.recdata
+  - name: edge.recsession
+    type: com.ibm.rational.test.lt.recsession
+    dependencies: 
+      - path: /shas/edge.recdata
+        type: recsessionRecdata
+  - name: edge.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 10.5.3.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.mobileweb'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1EEE2062FD95F00DDDCE16463376437
+    dependencies: 
+      - path: /shas/edge.recsession
+        type: testRecsession
+      - path: /shas/oogle_co_in_105.ma
+        type: test#moeb.applicationPackage
+  - name: oogle_co_in_105.ma
+    type: moeb.applicationPackage
+  - name: src
+    resources: 
